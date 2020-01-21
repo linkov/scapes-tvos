@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		F195B08823D6C8CA002A16FE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B08723D6C8CA002A16FE /* DetailViewController.swift */; };
+		F195B08C23D6D1A2002A16FE /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B08A23D6CFD6002A16FE /* MenuTableViewController.swift */; };
+		F195B08D23D6D1A4002A16FE /* ColorPresetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B08B23D6CFD6002A16FE /* ColorPresetTableViewCell.swift */; };
+		F195B09023D6F80D002A16FE /* MainColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B08E23D6F80D002A16FE /* MainColorCell.swift */; };
+		F195B09123D6F80D002A16FE /* MainColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F195B08F23D6F80D002A16FE /* MainColorCell.xib */; };
+		F195B09C23D6FBF0002A16FE /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09423D6FBF0002A16FE /* PreviewView.swift */; };
+		F195B09D23D6FBF0002A16FE /* ColorSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09523D6FBF0002A16FE /* ColorSlider.swift */; };
+		F195B09E23D6FBF0002A16FE /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09723D6FBF0002A16FE /* Gradient.swift */; };
+		F195B09F23D6FBF0002A16FE /* ColorSliderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09823D6FBF0002A16FE /* ColorSliderExtensions.swift */; };
+		F195B0A023D6FBF0002A16FE /* HSBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09923D6FBF0002A16FE /* HSBColor.swift */; };
+		F195B0A123D6FBF0002A16FE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09A23D6FBF0002A16FE /* GradientView.swift */; };
+		F195B0A223D6FBF0002A16FE /* DefaultPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09B23D6FBF0002A16FE /* DefaultPreviewView.swift */; };
 		F1E13D0E23D6311A00A492EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E13D0D23D6311A00A492EA /* AppDelegate.swift */; };
 		F1E13D1323D6311A00A492EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E13D1123D6311A00A492EA /* Main.storyboard */; };
 		F1E13D1523D6311B00A492EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E13D1423D6311B00A492EA /* Assets.xcassets */; };
@@ -26,6 +37,17 @@
 		D955A082A94F014FC080865A /* Pods-Fvnction TV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fvnction TV.debug.xcconfig"; path = "Target Support Files/Pods-Fvnction TV/Pods-Fvnction TV.debug.xcconfig"; sourceTree = "<group>"; };
 		D99D88006A5E0DB0C234CD45 /* Pods_Fvnction_TV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fvnction_TV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F195B08723D6C8CA002A16FE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F195B08A23D6CFD6002A16FE /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		F195B08B23D6CFD6002A16FE /* ColorPresetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPresetTableViewCell.swift; sourceTree = "<group>"; };
+		F195B08E23D6F80D002A16FE /* MainColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainColorCell.swift; sourceTree = "<group>"; };
+		F195B08F23D6F80D002A16FE /* MainColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainColorCell.xib; sourceTree = "<group>"; };
+		F195B09423D6FBF0002A16FE /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		F195B09523D6FBF0002A16FE /* ColorSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSlider.swift; sourceTree = "<group>"; };
+		F195B09723D6FBF0002A16FE /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		F195B09823D6FBF0002A16FE /* ColorSliderExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSliderExtensions.swift; sourceTree = "<group>"; };
+		F195B09923D6FBF0002A16FE /* HSBColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColor.swift; sourceTree = "<group>"; };
+		F195B09A23D6FBF0002A16FE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		F195B09B23D6FBF0002A16FE /* DefaultPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPreviewView.swift; sourceTree = "<group>"; };
 		F1E13D0A23D6311A00A492EA /* Fvnction TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fvnction TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E13D0D23D6311A00A492EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1E13D1223D6311A00A492EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,9 +91,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F195B08923D6CFD6002A16FE /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				F195B08A23D6CFD6002A16FE /* MenuTableViewController.swift */,
+				F195B08B23D6CFD6002A16FE /* ColorPresetTableViewCell.swift */,
+			);
+			path = Menus;
+			sourceTree = "<group>";
+		};
+		F195B09223D6FBF0002A16FE /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				F195B09323D6FBF0002A16FE /* colorslider */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		F195B09323D6FBF0002A16FE /* colorslider */ = {
+			isa = PBXGroup;
+			children = (
+				F195B09423D6FBF0002A16FE /* PreviewView.swift */,
+				F195B09523D6FBF0002A16FE /* ColorSlider.swift */,
+				F195B09623D6FBF0002A16FE /* Internal */,
+				F195B09A23D6FBF0002A16FE /* GradientView.swift */,
+				F195B09B23D6FBF0002A16FE /* DefaultPreviewView.swift */,
+			);
+			path = colorslider;
+			sourceTree = "<group>";
+		};
+		F195B09623D6FBF0002A16FE /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				F195B09723D6FBF0002A16FE /* Gradient.swift */,
+				F195B09823D6FBF0002A16FE /* ColorSliderExtensions.swift */,
+				F195B09923D6FBF0002A16FE /* HSBColor.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
 		F1E13D0123D6311A00A492EA = {
 			isa = PBXGroup;
 			children = (
+				F195B09223D6FBF0002A16FE /* Vendor */,
 				F1E13D0C23D6311A00A492EA /* Fvnction TV */,
 				F1E13D0B23D6311A00A492EA /* Products */,
 				8F836922D3FD859DBECFE72D /* Pods */,
@@ -97,6 +159,7 @@
 				F1E13D2A23D69CAB00A492EA /* Cells */,
 				F1E13D2123D68BF300A492EA /* MainViewController.swift */,
 				F195B08723D6C8CA002A16FE /* DetailViewController.swift */,
+				F195B08923D6CFD6002A16FE /* Menus */,
 				F1E13D1123D6311A00A492EA /* Main.storyboard */,
 				F1E13D1423D6311B00A492EA /* Assets.xcassets */,
 				F1E13D1623D6311B00A492EA /* LaunchScreen.storyboard */,
@@ -109,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				F1E13D2B23D69CBD00A492EA /* ShaderCell.swift */,
+				F195B08E23D6F80D002A16FE /* MainColorCell.swift */,
+				F195B08F23D6F80D002A16FE /* MainColorCell.xib */,
 				F1E13D2C23D69CBD00A492EA /* ShaderCell.xib */,
 			);
 			path = Cells;
@@ -175,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E13D1823D6311B00A492EA /* LaunchScreen.storyboard in Resources */,
+				F195B09123D6F80D002A16FE /* MainColorCell.xib in Resources */,
 				F1E13D1523D6311B00A492EA /* Assets.xcassets in Resources */,
 				F1E13D2E23D69CBD00A492EA /* ShaderCell.xib in Resources */,
 				F1E13D1323D6311A00A492EA /* Main.storyboard in Resources */,
@@ -232,10 +298,20 @@
 			files = (
 				F1E13D0E23D6311A00A492EA /* AppDelegate.swift in Sources */,
 				F1E13D2223D68BF300A492EA /* MainViewController.swift in Sources */,
+				F195B08D23D6D1A4002A16FE /* ColorPresetTableViewCell.swift in Sources */,
+				F195B09C23D6FBF0002A16FE /* PreviewView.swift in Sources */,
+				F195B0A023D6FBF0002A16FE /* HSBColor.swift in Sources */,
 				F1E13D2423D6902500A492EA /* Shaders.metal in Sources */,
+				F195B0A123D6FBF0002A16FE /* GradientView.swift in Sources */,
+				F195B09023D6F80D002A16FE /* MainColorCell.swift in Sources */,
 				F1E13D2923D69BE300A492EA /* Models.swift in Sources */,
+				F195B08C23D6D1A2002A16FE /* MenuTableViewController.swift in Sources */,
 				F1E13D3023D6A8D200A492EA /* ShaderStore.swift in Sources */,
 				F1E13D2D23D69CBD00A492EA /* ShaderCell.swift in Sources */,
+				F195B09F23D6FBF0002A16FE /* ColorSliderExtensions.swift in Sources */,
+				F195B09D23D6FBF0002A16FE /* ColorSlider.swift in Sources */,
+				F195B09E23D6FBF0002A16FE /* Gradient.swift in Sources */,
+				F195B0A223D6FBF0002A16FE /* DefaultPreviewView.swift in Sources */,
 				F195B08823D6C8CA002A16FE /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

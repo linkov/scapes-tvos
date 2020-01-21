@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
 
     //MARK: SETUP
     fileprivate func setupView() {
-        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.translatesAutoresizingMaskIntoConstraints = false
         
         logoImageView.easy.layout(
             CenterX(0.0),
@@ -111,6 +111,10 @@ class MainViewController: UIViewController {
     
     func render(_ drawable: CAMetalDrawable?) {
         guard let drawable = drawable else { return }
+        
+        if self.presentedViewController != nil {
+            return
+        }
         
         let commandBuffer = commandQueue.makeCommandBuffer()
         let computeEncoder = commandBuffer!.makeComputeCommandEncoder()
