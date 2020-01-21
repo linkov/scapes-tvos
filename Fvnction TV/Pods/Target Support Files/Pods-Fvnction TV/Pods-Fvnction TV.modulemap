@@ -1,0 +1,6 @@
+framework module Pods_Fvnction_TV {
+  umbrella header "Pods-Fvnction TV-umbrella.h"
+
+  export *
+  module * { export * }
+}

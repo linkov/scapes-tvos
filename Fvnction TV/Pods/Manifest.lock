@@ -1,0 +1,30 @@
+PODS:
+  - CenteredCollectionView (2.2.1)
+  - EasyPeasy (1.9.0)
+  - Kingfisher (5.10.1):
+    - Kingfisher/Core (= 5.10.1)
+  - Kingfisher/Core (5.10.1)
+  - XCDYouTubeKit (2.8.2)
+
+DEPENDENCIES:
+  - CenteredCollectionView
+  - EasyPeasy
+  - Kingfisher
+  - XCDYouTubeKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CenteredCollectionView
+    - EasyPeasy
+    - Kingfisher
+    - XCDYouTubeKit
+
+SPEC CHECKSUMS:
+  CenteredCollectionView: ba6e45fb7774627890621d73c8dd7dbd33391da9
+  EasyPeasy: 19a84ef8f8bbcf925b9fecc29d1d78b7dab96718
+  Kingfisher: eb36b7dfcc78d60877051c92c119a2865972961a
+  XCDYouTubeKit: 79baadb0560673a67c771eba45f83e353fd12c1f
+
+PODFILE CHECKSUM: e21177dd5d263ba723c1c4f5cb7656249a4b6ee4
+
+COCOAPODS: 1.7.5

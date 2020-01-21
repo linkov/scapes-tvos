@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F195B08823D6C8CA002A16FE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B08723D6C8CA002A16FE /* DetailViewController.swift */; };
+		F1E13D0E23D6311A00A492EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E13D0D23D6311A00A492EA /* AppDelegate.swift */; };
+		F1E13D1323D6311A00A492EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E13D1123D6311A00A492EA /* Main.storyboard */; };
+		F1E13D1523D6311B00A492EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E13D1423D6311B00A492EA /* Assets.xcassets */; };
+		F1E13D1823D6311B00A492EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E13D1623D6311B00A492EA /* LaunchScreen.storyboard */; };
+		F1E13D2223D68BF300A492EA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E13D2123D68BF300A492EA /* MainViewController.swift */; };
+		F1E13D2423D6902500A492EA /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = F1E13D2323D6902500A492EA /* Shaders.metal */; };
+		F1E13D2923D69BE300A492EA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E13D2823D69BE300A492EA /* Models.swift */; };
+		F1E13D2D23D69CBD00A492EA /* ShaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E13D2B23D69CBD00A492EA /* ShaderCell.swift */; };
+		F1E13D2E23D69CBD00A492EA /* ShaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E13D2C23D69CBD00A492EA /* ShaderCell.xib */; };
+		F1E13D3023D6A8D200A492EA /* ShaderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E13D2F23D6A8D200A492EA /* ShaderStore.swift */; };
+		F9D015190F1022EF0A9F866A /* Pods_Fvnction_TV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99D88006A5E0DB0C234CD45 /* Pods_Fvnction_TV.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		97CC85E4A9E4F96D29007282 /* Pods-Fvnction TV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fvnction TV.release.xcconfig"; path = "Target Support Files/Pods-Fvnction TV/Pods-Fvnction TV.release.xcconfig"; sourceTree = "<group>"; };
+		D955A082A94F014FC080865A /* Pods-Fvnction TV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fvnction TV.debug.xcconfig"; path = "Target Support Files/Pods-Fvnction TV/Pods-Fvnction TV.debug.xcconfig"; sourceTree = "<group>"; };
+		D99D88006A5E0DB0C234CD45 /* Pods_Fvnction_TV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fvnction_TV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F195B08723D6C8CA002A16FE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F1E13D0A23D6311A00A492EA /* Fvnction TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fvnction TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1E13D0D23D6311A00A492EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F1E13D1223D6311A00A492EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F1E13D1423D6311B00A492EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1E13D1723D6311B00A492EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1E13D1923D6311B00A492EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1E13D2123D68BF300A492EA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F1E13D2323D6902500A492EA /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		F1E13D2823D69BE300A492EA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		F1E13D2B23D69CBD00A492EA /* ShaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderCell.swift; sourceTree = "<group>"; };
+		F1E13D2C23D69CBD00A492EA /* ShaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShaderCell.xib; sourceTree = "<group>"; };
+		F1E13D2F23D6A8D200A492EA /* ShaderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1E13D0723D6311A00A492EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9D015190F1022EF0A9F866A /* Pods_Fvnction_TV.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8F836922D3FD859DBECFE72D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D955A082A94F014FC080865A /* Pods-Fvnction TV.debug.xcconfig */,
+				97CC85E4A9E4F96D29007282 /* Pods-Fvnction TV.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA8A7CBBA96AA0E7D11BAB3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D99D88006A5E0DB0C234CD45 /* Pods_Fvnction_TV.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1E13D0123D6311A00A492EA = {
+			isa = PBXGroup;
+			children = (
+				F1E13D0C23D6311A00A492EA /* Fvnction TV */,
+				F1E13D0B23D6311A00A492EA /* Products */,
+				8F836922D3FD859DBECFE72D /* Pods */,
+				BA8A7CBBA96AA0E7D11BAB3F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F1E13D0B23D6311A00A492EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1E13D0A23D6311A00A492EA /* Fvnction TV.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1E13D0C23D6311A00A492EA /* Fvnction TV */ = {
+			isa = PBXGroup;
+			children = (
+				F1E13D2323D6902500A492EA /* Shaders.metal */,
+				F1E13D0D23D6311A00A492EA /* AppDelegate.swift */,
+				F1E13D2823D69BE300A492EA /* Models.swift */,
+				F1E13D2F23D6A8D200A492EA /* ShaderStore.swift */,
+				F1E13D2A23D69CAB00A492EA /* Cells */,
+				F1E13D2123D68BF300A492EA /* MainViewController.swift */,
+				F195B08723D6C8CA002A16FE /* DetailViewController.swift */,
+				F1E13D1123D6311A00A492EA /* Main.storyboard */,
+				F1E13D1423D6311B00A492EA /* Assets.xcassets */,
+				F1E13D1623D6311B00A492EA /* LaunchScreen.storyboard */,
+				F1E13D1923D6311B00A492EA /* Info.plist */,
+			);
+			path = "Fvnction TV";
+			sourceTree = "<group>";
+		};
+		F1E13D2A23D69CAB00A492EA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F1E13D2B23D69CBD00A492EA /* ShaderCell.swift */,
+				F1E13D2C23D69CBD00A492EA /* ShaderCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1E13D0923D6311A00A492EA /* Fvnction TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1E13D1C23D6311B00A492EA /* Build configuration list for PBXNativeTarget "Fvnction TV" */;
+			buildPhases = (
+				F7D7D7945B00AE0B4FEF4AAB /* [CP] Check Pods Manifest.lock */,
+				F1E13D0623D6311A00A492EA /* Sources */,
+				F1E13D0723D6311A00A492EA /* Frameworks */,
+				F1E13D0823D6311A00A492EA /* Resources */,
+				11BB800573DFB183F5D59166 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fvnction TV";
+			productName = "Fvnction TV";
+			productReference = F1E13D0A23D6311A00A492EA /* Fvnction TV.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1E13D0223D6311A00A492EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = SDWR;
+				TargetAttributes = {
+					F1E13D0923D6311A00A492EA = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = F1E13D0523D6311A00A492EA /* Build configuration list for PBXProject "Fvnction TV" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F1E13D0123D6311A00A492EA;
+			productRefGroup = F1E13D0B23D6311A00A492EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1E13D0923D6311A00A492EA /* Fvnction TV */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1E13D0823D6311A00A492EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1E13D1823D6311B00A492EA /* LaunchScreen.storyboard in Resources */,
+				F1E13D1523D6311B00A492EA /* Assets.xcassets in Resources */,
+				F1E13D2E23D69CBD00A492EA /* ShaderCell.xib in Resources */,
+				F1E13D1323D6311A00A492EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11BB800573DFB183F5D59166 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fvnction TV/Pods-Fvnction TV-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fvnction TV/Pods-Fvnction TV-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fvnction TV/Pods-Fvnction TV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7D7D7945B00AE0B4FEF4AAB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fvnction TV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1E13D0623D6311A00A492EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1E13D0E23D6311A00A492EA /* AppDelegate.swift in Sources */,
+				F1E13D2223D68BF300A492EA /* MainViewController.swift in Sources */,
+				F1E13D2423D6902500A492EA /* Shaders.metal in Sources */,
+				F1E13D2923D69BE300A492EA /* Models.swift in Sources */,
+				F1E13D3023D6A8D200A492EA /* ShaderStore.swift in Sources */,
+				F1E13D2D23D69CBD00A492EA /* ShaderCell.swift in Sources */,
+				F195B08823D6C8CA002A16FE /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F1E13D1123D6311A00A492EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1E13D1223D6311A00A492EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F1E13D1623D6311B00A492EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1E13D1723D6311B00A492EA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F1E13D1A23D6311B00A492EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Debug;
+		};
+		F1E13D1B23D6311B00A492EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = appletvos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F1E13D1D23D6311B00A492EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D955A082A94F014FC080865A /* Pods-Fvnction TV.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43R88X5B35;
+				INFOPLIST_FILE = "Fvnction TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sdwr.fvnction.Fvnction-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		F1E13D1E23D6311B00A492EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97CC85E4A9E4F96D29007282 /* Pods-Fvnction TV.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43R88X5B35;
+				INFOPLIST_FILE = "Fvnction TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sdwr.fvnction.Fvnction-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1E13D0523D6311A00A492EA /* Build configuration list for PBXProject "Fvnction TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1E13D1A23D6311B00A492EA /* Debug */,
+				F1E13D1B23D6311B00A492EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1E13D1C23D6311B00A492EA /* Build configuration list for PBXNativeTarget "Fvnction TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1E13D1D23D6311B00A492EA /* Debug */,
+				F1E13D1E23D6311B00A492EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1E13D0223D6311A00A492EA /* Project object */;
+}
