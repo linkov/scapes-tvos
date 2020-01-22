@@ -59,8 +59,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gGe-SS-PVl"/>
                                 </connections>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoInvert1" id="Zzy-aw-wyL">
-                                <rect key="frame" x="40" y="39" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logocolor" id="Zzy-aw-wyL">
+                                <rect key="frame" x="40" y="40" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -106,7 +106,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="700" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoInvert1" translatesAutoresizingMaskIntoConstraints="NO" id="82M-zN-bR4">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logocolor" translatesAutoresizingMaskIntoConstraints="NO" id="82M-zN-bR4">
                                                         <rect key="frame" x="275" y="50" width="150" height="150"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="5LX-3G-fJv"/>
@@ -202,6 +202,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logoInvert1" width="300" height="246"/>
+        <image name="logocolor" width="222" height="181"/>
     </resources>
 </document>

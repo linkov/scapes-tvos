@@ -2,18 +2,22 @@
   "images" : [
     {
       "idiom" : "tv",
+      "filename" : "t.png",
       "scale" : "1x"
     },
     {
       "idiom" : "tv",
+      "filename" : "t@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "tv-marketing",
+      "filename" : "t-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "tv-marketing",
+      "filename" : "t@2x-1.png",
       "scale" : "2x"
     }
   ],

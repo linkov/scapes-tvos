@@ -189,8 +189,9 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         if let indexPath = context.nextFocusedIndexPath {
             
             let shader = shaders[indexPath.item]
-            
+            animationView.releaseDrawables()
             mainShaderColor = shader.mainColor
+            time = 0.0
             setupMetal(shader: shader.id)
             
          }
@@ -203,6 +204,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         detailVC.mainShaderColor = shaders[indexPath.item].mainColor
         
         animationView.releaseDrawables()
+      
         
         present(detailVC, animated: true, completion: nil)
     }
