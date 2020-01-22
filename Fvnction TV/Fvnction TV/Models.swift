@@ -5,7 +5,7 @@
 //  Created by Alex Linkov on 1/21/20.
 //  Copyright © 2020 SDWR. All rights reserved.
 //
-
+import MetalKit
 import Foundation
 import UIKit
 
@@ -15,6 +15,8 @@ public struct Shader {
     public let title: String
     public let month: String
     public let imageURL: String
+    public let mainColor: simd_float3
+    public let scale = 1.0
 }
 
 

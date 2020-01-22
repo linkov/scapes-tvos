@@ -11,14 +11,10 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
 
-
-    @IBOutlet weak var mainColorCell: UITableViewCell!
-    @IBOutlet weak var firstVariableCell: UITableViewCell!
-    @IBOutlet weak var secondVariableCell: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.register(SimpleTableViewCell.self, forCellReuseIdentifier: "SimpleTableViewCell")
         updatedSettings()
     }
 
@@ -26,10 +22,10 @@ class MenuTableViewController: UITableViewController {
 
     }
 
-    override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print((indexPath.section, indexPath.row))
-
-    }
+//    override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print((indexPath.section, indexPath.row))
+//
+//    }
 
  
 }

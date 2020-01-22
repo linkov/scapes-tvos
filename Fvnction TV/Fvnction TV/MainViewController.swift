@@ -30,9 +30,12 @@ class MainViewController: UIViewController {
     private var metalView : MTKView!
     var computeState: MTLComputePipelineState?
     
+    
+    var mainShaderColor: simd_float3!
     var time:Float = 0
     var timespeed:Float = Float.pi / 180.00
-    
+    var shaderScale: Float = 1.0
+    var shaderIntensity: Float = 1.0
     var pipelineState: MTLRenderPipelineState!
     var commandQueue: MTLCommandQueue!
     
@@ -122,8 +125,10 @@ class MainViewController: UIViewController {
         computeEncoder?.setComputePipelineState(self.computeState!)
         
         computeEncoder?.setTexture(drawable.texture , index: 0)
-        computeEncoder?.setBytes(&self.time, length: MemoryLayout<Float>.size, index: 0)
-        
+        computeEncoder?.setBytes(&self.shaderScale, length: MemoryLayout<Float>.size, index: 0)
+        computeEncoder?.setBytes(&self.time, length: MemoryLayout<Float>.size, index: 1)
+        computeEncoder?.setBytes(&self.mainShaderColor, length: MemoryLayout<simd_float3>.size, index: 2)
+        computeEncoder?.setBytes(&self.shaderIntensity, length: MemoryLayout<Float>.size, index: 3)
         
         let threadGroupCount = MTLSizeMake(8, 8, 1)
         let threadGroups = MTLSizeMake(drawable.texture.width / threadGroupCount.width, drawable.texture.height / threadGroupCount.height, 1)
@@ -185,7 +190,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             let shader = shaders[indexPath.item]
             
-            
+            mainShaderColor = shader.mainColor
             setupMetal(shader: shader.id)
             
          }
@@ -195,6 +200,10 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let detailVC = storyboard!.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
 
         detailVC.shaderID = shaders[indexPath.item].id
+        detailVC.mainShaderColor = shaders[indexPath.item].mainColor
+        
+        animationView.releaseDrawables()
+        
         present(detailVC, animated: true, completion: nil)
     }
 }

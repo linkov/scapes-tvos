@@ -9,5 +9,4 @@ target 'Fvnction TV' do
   pod 'XCDYouTubeKit'
   pod "CenteredCollectionView"
   pod "EasyPeasy"
-
 end

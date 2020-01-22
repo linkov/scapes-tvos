@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Fvnction TV/Pods-Fvnction TV-frameworks.sh
+${BUILT_PRODUCTS_DIR}/BadgeSwift/BadgeSwift.framework
 ${BUILT_PRODUCTS_DIR}/CenteredCollectionView/CenteredCollectionView.framework
 ${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework

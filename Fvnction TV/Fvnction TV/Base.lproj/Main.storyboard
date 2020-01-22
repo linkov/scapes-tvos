@@ -59,8 +59,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gGe-SS-PVl"/>
                                 </connections>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video-stream-logo512" id="Zzy-aw-wyL">
-                                <rect key="frame" x="40" y="40" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoInvert1" id="Zzy-aw-wyL">
+                                <rect key="frame" x="40" y="39" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -106,7 +106,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="700" height="250"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_invert" translatesAutoresizingMaskIntoConstraints="NO" id="82M-zN-bR4">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoInvert1" translatesAutoresizingMaskIntoConstraints="NO" id="82M-zN-bR4">
                                                         <rect key="frame" x="275" y="50" width="150" height="150"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="5LX-3G-fJv"/>
@@ -172,67 +172,27 @@
         <scene sceneID="O6s-JC-m6v">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="9ZP-73-4MO" customClass="MenuTableViewController" customModule="Fvnction_TV" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" id="7f2-Gg-0NP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" id="7f2-Gg-0NP">
                         <rect key="frame" x="0.0" y="0.0" width="691" height="670"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <sections>
-                            <tableViewSection id="CfE-w5-EeL">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" rowHeight="200" id="N1u-y5-fe9" customClass="MainColorCell" customModule="Fvnction_TV" customModuleProvider="target">
-                                        <rect key="frame" x="110" y="0.0" width="561" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N1u-y5-fe9" id="j7o-E2-SsU">
-                                            <rect key="frame" x="0.0" y="0.0" width="561" height="200"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="93A-Md-X6C" style="IBUITableViewCellStyleDefault" id="5y7-qw-p20">
-                                        <rect key="frame" x="110" y="214" width="561" height="66"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5y7-qw-p20" id="s2i-Tm-jUC">
-                                            <rect key="frame" x="0.0" y="0.0" width="561" height="66"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="First function" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="93A-Md-X6C">
-                                                    <rect key="frame" x="8" y="0.0" width="533" height="66"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="gUq-VE-pCI" style="IBUITableViewCellStyleDefault" id="HBI-sM-07W">
-                                        <rect key="frame" x="110" y="294" width="561" height="66"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HBI-sM-07W" id="71t-WI-PSR">
-                                            <rect key="frame" x="0.0" y="0.0" width="561" height="66"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gUq-VE-pCI">
-                                                    <rect key="frame" x="8" y="0.0" width="533" height="66"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SimpleTableViewCell" id="kDq-Cf-saF" customClass="SimpleTableViewCell" customModule="Fvnction_TV" customModuleProvider="target">
+                                <rect key="frame" x="110" y="66" width="561" height="66"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kDq-Cf-saF" id="AdM-a8-Hc1">
+                                    <rect key="frame" x="0.0" y="0.0" width="561" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="9ZP-73-4MO" id="XBT-xh-6GG"/>
                             <outlet property="delegate" destination="9ZP-73-4MO" id="wuL-mq-XD4"/>
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="firstVariableCell" destination="5y7-qw-p20" id="35p-lJ-DVA"/>
-                        <outlet property="mainColorCell" destination="N1u-y5-fe9" id="K3C-i6-jji"/>
-                        <outlet property="secondVariableCell" destination="HBI-sM-07W" id="Qc1-fh-1gj"/>
                         <outlet property="tabBarObservedScrollView" destination="7f2-Gg-0NP" id="xIv-Z8-c6Z"/>
                     </connections>
                 </tableViewController>
@@ -242,7 +202,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo_invert" width="150" height="123"/>
-        <image name="video-stream-logo512" width="512" height="512"/>
+        <image name="logoInvert1" width="300" height="246"/>
     </resources>
 </document>

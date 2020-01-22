@@ -30,5 +30,11 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Dark</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>exo-semibold.ttf</string>
+		<string>robotoMono-regular.ttf</string>
+		<string></string>
+	</array>
 </dict>
 </plist>

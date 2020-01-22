@@ -19,6 +19,45 @@
 		F195B0A023D6FBF0002A16FE /* HSBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09923D6FBF0002A16FE /* HSBColor.swift */; };
 		F195B0A123D6FBF0002A16FE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09A23D6FBF0002A16FE /* GradientView.swift */; };
 		F195B0A223D6FBF0002A16FE /* DefaultPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09B23D6FBF0002A16FE /* DefaultPreviewView.swift */; };
+		F1C2CD4A23D773070078D698 /* robotoMono-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C2CD4623D773060078D698 /* robotoMono-medium.ttf */; };
+		F1C2CD4B23D773070078D698 /* robotoMono-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C2CD4723D773060078D698 /* robotoMono-bold.ttf */; };
+		F1C2CD4C23D773070078D698 /* exo-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C2CD4823D773060078D698 /* exo-semibold.ttf */; };
+		F1C2CD4D23D773070078D698 /* robotoMono-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C2CD4923D773070078D698 /* robotoMono-regular.ttf */; };
+		F1C2CD5323D7929D0078D698 /* SimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD5223D7929D0078D698 /* SimpleTableViewCell.swift */; };
+		F1C2CD6223D7A7800078D698 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD5723D7A7800078D698 /* UIColor+Extension.swift */; };
+		F1C2CD6423D7A7800078D698 /* ColorPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD5A23D7A7800078D698 /* ColorPickerViewDelegate.swift */; };
+		F1C2CD6523D7A7800078D698 /* ColorPickerViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD5B23D7A7800078D698 /* ColorPickerViewDelegateFlowLayout.swift */; };
+		F1C2CD6623D7A7800078D698 /* ColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD5D23D7A7800078D698 /* ColorPickerCell.swift */; };
+		F1C2CD6723D7A7800078D698 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD5E23D7A7800078D698 /* ColorPickerView.swift */; };
+		F1C2CD6823D7A7800078D698 /* DefaultValuesIG.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD5F23D7A7800078D698 /* DefaultValuesIG.swift */; };
+		F1C2CD8123D7A8240078D698 /* M13CheckboxExpandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD6D23D7A8240078D698 /* M13CheckboxExpandController.swift */; };
+		F1C2CD8223D7A8240078D698 /* M13CheckboxSpiralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD6E23D7A8240078D698 /* M13CheckboxSpiralController.swift */; };
+		F1C2CD8323D7A8240078D698 /* M13CheckboxFadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD6F23D7A8240078D698 /* M13CheckboxFadeController.swift */; };
+		F1C2CD8423D7A8240078D698 /* M13CheckboxFlatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7023D7A8240078D698 /* M13CheckboxFlatController.swift */; };
+		F1C2CD8523D7A8240078D698 /* M13CheckboxFillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7123D7A8240078D698 /* M13CheckboxFillController.swift */; };
+		F1C2CD8623D7A8240078D698 /* M13CheckboxStrokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7223D7A8240078D698 /* M13CheckboxStrokeController.swift */; };
+		F1C2CD8723D7A8240078D698 /* M13CheckboxBounceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7323D7A8240078D698 /* M13CheckboxBounceController.swift */; };
+		F1C2CD8823D7A8240078D698 /* M13CheckboxDotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7423D7A8240078D698 /* M13CheckboxDotController.swift */; };
+		F1C2CD8923D7A8240078D698 /* M13CheckboxPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7623D7A8240078D698 /* M13CheckboxPathGenerator.swift */; };
+		F1C2CD8A23D7A8240078D698 /* M13CheckboxCheckPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7723D7A8240078D698 /* M13CheckboxCheckPathGenerator.swift */; };
+		F1C2CD8B23D7A8240078D698 /* M13CheckboxDisclosurePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7823D7A8240078D698 /* M13CheckboxDisclosurePathGenerator.swift */; };
+		F1C2CD8C23D7A8240078D698 /* M13CheckboxAddRemovePathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7923D7A8240078D698 /* M13CheckboxAddRemovePathGenerator.swift */; };
+		F1C2CD8D23D7A8240078D698 /* M13CheckboxRadioPathGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7A23D7A8240078D698 /* M13CheckboxRadioPathGenerator.swift */; };
+		F1C2CD8E23D7A8240078D698 /* M13Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7B23D7A8240078D698 /* M13Checkbox.swift */; };
+		F1C2CD8F23D7A8240078D698 /* M13CheckboxAnimationGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7C23D7A8240078D698 /* M13CheckboxAnimationGenerator.swift */; };
+		F1C2CD9123D7A8240078D698 /* M13CheckboxGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7E23D7A8240078D698 /* M13CheckboxGestureRecognizer.swift */; };
+		F1C2CD9223D7A8240078D698 /* M13CheckboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD7F23D7A8240078D698 /* M13CheckboxController.swift */; };
+		F1C2CD9323D7A8240078D698 /* M13Checkbox+IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD8023D7A8240078D698 /* M13Checkbox+IB.swift */; };
+		F1C2CD9523D7A8B70078D698 /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD9423D7A8B60078D698 /* DefaultValues.swift */; };
+		F1C2CD9A23D7DC6D0078D698 /* RangeSeekSliderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD9723D7DC6D0078D698 /* RangeSeekSliderDelegate.swift */; };
+		F1C2CD9B23D7DC6D0078D698 /* RangeSeekSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD9823D7DC6D0078D698 /* RangeSeekSlider.swift */; };
+		F1C2CDA123D7E9F60078D698 /* TvOSSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CD9E23D7E9F60078D698 /* TvOSSlider.swift */; };
+		F1C2CDA223D7E9F60078D698 /* DPadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CDA023D7E9F60078D698 /* DPadState.swift */; };
+		F1C2CDA923D7F7880078D698 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CDA423D7F7880078D698 /* Gradients.swift */; };
+		F1C2CDAA23D7F7880078D698 /* Gradients+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CDA523D7F7880078D698 /* Gradients+Name.swift */; };
+		F1C2CDAB23D7F7880078D698 /* Gradients+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CDA623D7F7880078D698 /* Gradients+Layer.swift */; };
+		F1C2CDAC23D7F7880078D698 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CDA723D7F7880078D698 /* Color+Extension.swift */; };
+		F1C2CDAD23D7F7880078D698 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2CDA823D7F7880078D698 /* Direction.swift */; };
 		F1E13D0E23D6311A00A492EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E13D0D23D6311A00A492EA /* AppDelegate.swift */; };
 		F1E13D1323D6311A00A492EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E13D1123D6311A00A492EA /* Main.storyboard */; };
 		F1E13D1523D6311B00A492EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E13D1423D6311B00A492EA /* Assets.xcassets */; };
@@ -48,6 +87,46 @@
 		F195B09923D6FBF0002A16FE /* HSBColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColor.swift; sourceTree = "<group>"; };
 		F195B09A23D6FBF0002A16FE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F195B09B23D6FBF0002A16FE /* DefaultPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPreviewView.swift; sourceTree = "<group>"; };
+		F1C2CD4623D773060078D698 /* robotoMono-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "robotoMono-medium.ttf"; sourceTree = "<group>"; };
+		F1C2CD4723D773060078D698 /* robotoMono-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "robotoMono-bold.ttf"; sourceTree = "<group>"; };
+		F1C2CD4823D773060078D698 /* exo-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "exo-semibold.ttf"; sourceTree = "<group>"; };
+		F1C2CD4923D773070078D698 /* robotoMono-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "robotoMono-regular.ttf"; sourceTree = "<group>"; };
+		F1C2CD5223D7929D0078D698 /* SimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewCell.swift; sourceTree = "<group>"; };
+		F1C2CD5723D7A7800078D698 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F1C2CD5A23D7A7800078D698 /* ColorPickerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewDelegate.swift; sourceTree = "<group>"; };
+		F1C2CD5B23D7A7800078D698 /* ColorPickerViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewDelegateFlowLayout.swift; sourceTree = "<group>"; };
+		F1C2CD5D23D7A7800078D698 /* ColorPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerCell.swift; sourceTree = "<group>"; };
+		F1C2CD5E23D7A7800078D698 /* ColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		F1C2CD5F23D7A7800078D698 /* DefaultValuesIG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValuesIG.swift; sourceTree = "<group>"; };
+		F1C2CD6D23D7A8240078D698 /* M13CheckboxExpandController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxExpandController.swift; sourceTree = "<group>"; };
+		F1C2CD6E23D7A8240078D698 /* M13CheckboxSpiralController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxSpiralController.swift; sourceTree = "<group>"; };
+		F1C2CD6F23D7A8240078D698 /* M13CheckboxFadeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxFadeController.swift; sourceTree = "<group>"; };
+		F1C2CD7023D7A8240078D698 /* M13CheckboxFlatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxFlatController.swift; sourceTree = "<group>"; };
+		F1C2CD7123D7A8240078D698 /* M13CheckboxFillController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxFillController.swift; sourceTree = "<group>"; };
+		F1C2CD7223D7A8240078D698 /* M13CheckboxStrokeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxStrokeController.swift; sourceTree = "<group>"; };
+		F1C2CD7323D7A8240078D698 /* M13CheckboxBounceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxBounceController.swift; sourceTree = "<group>"; };
+		F1C2CD7423D7A8240078D698 /* M13CheckboxDotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxDotController.swift; sourceTree = "<group>"; };
+		F1C2CD7623D7A8240078D698 /* M13CheckboxPathGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxPathGenerator.swift; sourceTree = "<group>"; };
+		F1C2CD7723D7A8240078D698 /* M13CheckboxCheckPathGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxCheckPathGenerator.swift; sourceTree = "<group>"; };
+		F1C2CD7823D7A8240078D698 /* M13CheckboxDisclosurePathGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxDisclosurePathGenerator.swift; sourceTree = "<group>"; };
+		F1C2CD7923D7A8240078D698 /* M13CheckboxAddRemovePathGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxAddRemovePathGenerator.swift; sourceTree = "<group>"; };
+		F1C2CD7A23D7A8240078D698 /* M13CheckboxRadioPathGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxRadioPathGenerator.swift; sourceTree = "<group>"; };
+		F1C2CD7B23D7A8240078D698 /* M13Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13Checkbox.swift; sourceTree = "<group>"; };
+		F1C2CD7C23D7A8240078D698 /* M13CheckboxAnimationGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxAnimationGenerator.swift; sourceTree = "<group>"; };
+		F1C2CD7E23D7A8240078D698 /* M13CheckboxGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxGestureRecognizer.swift; sourceTree = "<group>"; };
+		F1C2CD7F23D7A8240078D698 /* M13CheckboxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M13CheckboxController.swift; sourceTree = "<group>"; };
+		F1C2CD8023D7A8240078D698 /* M13Checkbox+IB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "M13Checkbox+IB.swift"; sourceTree = "<group>"; };
+		F1C2CD9423D7A8B60078D698 /* DefaultValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
+		F1C2CD9723D7DC6D0078D698 /* RangeSeekSliderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSeekSliderDelegate.swift; sourceTree = "<group>"; };
+		F1C2CD9823D7DC6D0078D698 /* RangeSeekSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSeekSlider.swift; sourceTree = "<group>"; };
+		F1C2CD9E23D7E9F60078D698 /* TvOSSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvOSSlider.swift; sourceTree = "<group>"; };
+		F1C2CD9F23D7E9F60078D698 /* TvOSSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TvOSSlider.h; sourceTree = "<group>"; };
+		F1C2CDA023D7E9F60078D698 /* DPadState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPadState.swift; sourceTree = "<group>"; };
+		F1C2CDA423D7F7880078D698 /* Gradients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
+		F1C2CDA523D7F7880078D698 /* Gradients+Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gradients+Name.swift"; sourceTree = "<group>"; };
+		F1C2CDA623D7F7880078D698 /* Gradients+Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gradients+Layer.swift"; sourceTree = "<group>"; };
+		F1C2CDA723D7F7880078D698 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		F1C2CDA823D7F7880078D698 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		F1E13D0A23D6311A00A492EA /* Fvnction TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fvnction TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E13D0D23D6311A00A492EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1E13D1223D6311A00A492EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +182,11 @@
 		F195B09223D6FBF0002A16FE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F1C2CDA323D7F7880078D698 /* Gradients */,
+				F1C2CD9D23D7E9F60078D698 /* TvOSSlider */,
+				F1C2CD9623D7DC6D0078D698 /* RangeSeekSlider */,
+				F1C2CD6A23D7A8240078D698 /* M13 */,
+				F1C2CD5423D7A7800078D698 /* IGColorPicker */,
 				F195B09323D6FBF0002A16FE /* colorslider */,
 			);
 			path = Vendor;
@@ -130,9 +214,155 @@
 			path = Internal;
 			sourceTree = "<group>";
 		};
+		F1C2CD3D23D7726B0078D698 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CD4823D773060078D698 /* exo-semibold.ttf */,
+				F1C2CD4723D773060078D698 /* robotoMono-bold.ttf */,
+				F1C2CD4623D773060078D698 /* robotoMono-medium.ttf */,
+				F1C2CD4923D773070078D698 /* robotoMono-regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F1C2CD5423D7A7800078D698 /* IGColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CD5523D7A7800078D698 /* Classes */,
+				F1C2CD6023D7A7800078D698 /* Assets */,
+			);
+			path = IGColorPicker;
+			sourceTree = "<group>";
+		};
+		F1C2CD5523D7A7800078D698 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CD5623D7A7800078D698 /* Extension */,
+				F1C2CD5923D7A7800078D698 /* Protocol */,
+				F1C2CD5C23D7A7800078D698 /* View */,
+				F1C2CD5F23D7A7800078D698 /* DefaultValuesIG.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F1C2CD5623D7A7800078D698 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CD5723D7A7800078D698 /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F1C2CD5923D7A7800078D698 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CD5A23D7A7800078D698 /* ColorPickerViewDelegate.swift */,
+				F1C2CD5B23D7A7800078D698 /* ColorPickerViewDelegateFlowLayout.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F1C2CD5C23D7A7800078D698 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CD5D23D7A7800078D698 /* ColorPickerCell.swift */,
+				F1C2CD5E23D7A7800078D698 /* ColorPickerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F1C2CD6023D7A7800078D698 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F1C2CD6A23D7A8240078D698 /* M13 */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CD6B23D7A8240078D698 /* Sources */,
+			);
+			path = M13;
+			sourceTree = "<group>";
+		};
+		F1C2CD6B23D7A8240078D698 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CD9423D7A8B60078D698 /* DefaultValues.swift */,
+				F1C2CD6C23D7A8240078D698 /* Managers */,
+				F1C2CD7523D7A8240078D698 /* Paths */,
+				F1C2CD7B23D7A8240078D698 /* M13Checkbox.swift */,
+				F1C2CD7C23D7A8240078D698 /* M13CheckboxAnimationGenerator.swift */,
+				F1C2CD7E23D7A8240078D698 /* M13CheckboxGestureRecognizer.swift */,
+				F1C2CD7F23D7A8240078D698 /* M13CheckboxController.swift */,
+				F1C2CD8023D7A8240078D698 /* M13Checkbox+IB.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		F1C2CD6C23D7A8240078D698 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CD6D23D7A8240078D698 /* M13CheckboxExpandController.swift */,
+				F1C2CD6E23D7A8240078D698 /* M13CheckboxSpiralController.swift */,
+				F1C2CD6F23D7A8240078D698 /* M13CheckboxFadeController.swift */,
+				F1C2CD7023D7A8240078D698 /* M13CheckboxFlatController.swift */,
+				F1C2CD7123D7A8240078D698 /* M13CheckboxFillController.swift */,
+				F1C2CD7223D7A8240078D698 /* M13CheckboxStrokeController.swift */,
+				F1C2CD7323D7A8240078D698 /* M13CheckboxBounceController.swift */,
+				F1C2CD7423D7A8240078D698 /* M13CheckboxDotController.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F1C2CD7523D7A8240078D698 /* Paths */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CD7623D7A8240078D698 /* M13CheckboxPathGenerator.swift */,
+				F1C2CD7723D7A8240078D698 /* M13CheckboxCheckPathGenerator.swift */,
+				F1C2CD7823D7A8240078D698 /* M13CheckboxDisclosurePathGenerator.swift */,
+				F1C2CD7923D7A8240078D698 /* M13CheckboxAddRemovePathGenerator.swift */,
+				F1C2CD7A23D7A8240078D698 /* M13CheckboxRadioPathGenerator.swift */,
+			);
+			path = Paths;
+			sourceTree = "<group>";
+		};
+		F1C2CD9623D7DC6D0078D698 /* RangeSeekSlider */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CD9723D7DC6D0078D698 /* RangeSeekSliderDelegate.swift */,
+				F1C2CD9823D7DC6D0078D698 /* RangeSeekSlider.swift */,
+			);
+			path = RangeSeekSlider;
+			sourceTree = "<group>";
+		};
+		F1C2CD9D23D7E9F60078D698 /* TvOSSlider */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CD9E23D7E9F60078D698 /* TvOSSlider.swift */,
+				F1C2CD9F23D7E9F60078D698 /* TvOSSlider.h */,
+				F1C2CDA023D7E9F60078D698 /* DPadState.swift */,
+			);
+			path = TvOSSlider;
+			sourceTree = "<group>";
+		};
+		F1C2CDA323D7F7880078D698 /* Gradients */ = {
+			isa = PBXGroup;
+			children = (
+				F1C2CDA423D7F7880078D698 /* Gradients.swift */,
+				F1C2CDA523D7F7880078D698 /* Gradients+Name.swift */,
+				F1C2CDA623D7F7880078D698 /* Gradients+Layer.swift */,
+				F1C2CDA723D7F7880078D698 /* Color+Extension.swift */,
+				F1C2CDA823D7F7880078D698 /* Direction.swift */,
+			);
+			path = Gradients;
+			sourceTree = "<group>";
+		};
 		F1E13D0123D6311A00A492EA = {
 			isa = PBXGroup;
 			children = (
+				F1C2CD3D23D7726B0078D698 /* Fonts */,
 				F195B09223D6FBF0002A16FE /* Vendor */,
 				F1E13D0C23D6311A00A492EA /* Fvnction TV */,
 				F1E13D0B23D6311A00A492EA /* Products */,
@@ -173,6 +403,7 @@
 			children = (
 				F1E13D2B23D69CBD00A492EA /* ShaderCell.swift */,
 				F195B08E23D6F80D002A16FE /* MainColorCell.swift */,
+				F1C2CD5223D7929D0078D698 /* SimpleTableViewCell.swift */,
 				F195B08F23D6F80D002A16FE /* MainColorCell.xib */,
 				F1E13D2C23D69CBD00A492EA /* ShaderCell.xib */,
 			);
@@ -242,8 +473,12 @@
 				F1E13D1823D6311B00A492EA /* LaunchScreen.storyboard in Resources */,
 				F195B09123D6F80D002A16FE /* MainColorCell.xib in Resources */,
 				F1E13D1523D6311B00A492EA /* Assets.xcassets in Resources */,
+				F1C2CD4B23D773070078D698 /* robotoMono-bold.ttf in Resources */,
+				F1C2CD4C23D773070078D698 /* exo-semibold.ttf in Resources */,
+				F1C2CD4D23D773070078D698 /* robotoMono-regular.ttf in Resources */,
 				F1E13D2E23D69CBD00A492EA /* ShaderCell.xib in Resources */,
 				F1E13D1323D6311A00A492EA /* Main.storyboard in Resources */,
+				F1C2CD4A23D773070078D698 /* robotoMono-medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,23 +531,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C2CD9223D7A8240078D698 /* M13CheckboxController.swift in Sources */,
+				F1C2CD8A23D7A8240078D698 /* M13CheckboxCheckPathGenerator.swift in Sources */,
 				F1E13D0E23D6311A00A492EA /* AppDelegate.swift in Sources */,
+				F1C2CD8523D7A8240078D698 /* M13CheckboxFillController.swift in Sources */,
+				F1C2CD8423D7A8240078D698 /* M13CheckboxFlatController.swift in Sources */,
+				F1C2CD9123D7A8240078D698 /* M13CheckboxGestureRecognizer.swift in Sources */,
+				F1C2CD6223D7A7800078D698 /* UIColor+Extension.swift in Sources */,
 				F1E13D2223D68BF300A492EA /* MainViewController.swift in Sources */,
+				F1C2CD6623D7A7800078D698 /* ColorPickerCell.swift in Sources */,
 				F195B08D23D6D1A4002A16FE /* ColorPresetTableViewCell.swift in Sources */,
+				F1C2CDA123D7E9F60078D698 /* TvOSSlider.swift in Sources */,
+				F1C2CDA923D7F7880078D698 /* Gradients.swift in Sources */,
+				F1C2CD9323D7A8240078D698 /* M13Checkbox+IB.swift in Sources */,
+				F1C2CDA223D7E9F60078D698 /* DPadState.swift in Sources */,
+				F1C2CD8E23D7A8240078D698 /* M13Checkbox.swift in Sources */,
 				F195B09C23D6FBF0002A16FE /* PreviewView.swift in Sources */,
 				F195B0A023D6FBF0002A16FE /* HSBColor.swift in Sources */,
+				F1C2CD8323D7A8240078D698 /* M13CheckboxFadeController.swift in Sources */,
 				F1E13D2423D6902500A492EA /* Shaders.metal in Sources */,
+				F1C2CDAB23D7F7880078D698 /* Gradients+Layer.swift in Sources */,
+				F1C2CD6423D7A7800078D698 /* ColorPickerViewDelegate.swift in Sources */,
 				F195B0A123D6FBF0002A16FE /* GradientView.swift in Sources */,
 				F195B09023D6F80D002A16FE /* MainColorCell.swift in Sources */,
+				F1C2CD8723D7A8240078D698 /* M13CheckboxBounceController.swift in Sources */,
 				F1E13D2923D69BE300A492EA /* Models.swift in Sources */,
+				F1C2CD8B23D7A8240078D698 /* M13CheckboxDisclosurePathGenerator.swift in Sources */,
 				F195B08C23D6D1A2002A16FE /* MenuTableViewController.swift in Sources */,
+				F1C2CD8623D7A8240078D698 /* M13CheckboxStrokeController.swift in Sources */,
+				F1C2CD8F23D7A8240078D698 /* M13CheckboxAnimationGenerator.swift in Sources */,
+				F1C2CD6723D7A7800078D698 /* ColorPickerView.swift in Sources */,
 				F1E13D3023D6A8D200A492EA /* ShaderStore.swift in Sources */,
+				F1C2CDAC23D7F7880078D698 /* Color+Extension.swift in Sources */,
+				F1C2CD8D23D7A8240078D698 /* M13CheckboxRadioPathGenerator.swift in Sources */,
 				F1E13D2D23D69CBD00A492EA /* ShaderCell.swift in Sources */,
+				F1C2CDAA23D7F7880078D698 /* Gradients+Name.swift in Sources */,
+				F1C2CD8923D7A8240078D698 /* M13CheckboxPathGenerator.swift in Sources */,
 				F195B09F23D6FBF0002A16FE /* ColorSliderExtensions.swift in Sources */,
+				F1C2CD9A23D7DC6D0078D698 /* RangeSeekSliderDelegate.swift in Sources */,
+				F1C2CD8C23D7A8240078D698 /* M13CheckboxAddRemovePathGenerator.swift in Sources */,
 				F195B09D23D6FBF0002A16FE /* ColorSlider.swift in Sources */,
 				F195B09E23D6FBF0002A16FE /* Gradient.swift in Sources */,
+				F1C2CD8123D7A8240078D698 /* M13CheckboxExpandController.swift in Sources */,
+				F1C2CD9523D7A8B70078D698 /* DefaultValues.swift in Sources */,
+				F1C2CD6823D7A7800078D698 /* DefaultValuesIG.swift in Sources */,
+				F1C2CD5323D7929D0078D698 /* SimpleTableViewCell.swift in Sources */,
 				F195B0A223D6FBF0002A16FE /* DefaultPreviewView.swift in Sources */,
+				F1C2CD8823D7A8240078D698 /* M13CheckboxDotController.swift in Sources */,
+				F1C2CD9B23D7DC6D0078D698 /* RangeSeekSlider.swift in Sources */,
+				F1C2CD6523D7A7800078D698 /* ColorPickerViewDelegateFlowLayout.swift in Sources */,
 				F195B08823D6C8CA002A16FE /* DetailViewController.swift in Sources */,
+				F1C2CD8223D7A8240078D698 /* M13CheckboxSpiralController.swift in Sources */,
+				F1C2CDAD23D7F7880078D698 /* Direction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

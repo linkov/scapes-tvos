@@ -8,7 +8,7 @@
 
 import UIKit
 import MetalKit
-
+import EasyPeasy
 
 enum UIState {
     case colorPresets
@@ -18,6 +18,11 @@ enum UIState {
 
 class DetailViewController: UIViewController {
 
+    
+    
+    var focusedView: UIView?
+    
+    
     @IBOutlet var mainMenuView: UIVisualEffectView!
     var menuTableViewController: MenuTableViewController?
     var state: UIState = .allClosed
@@ -32,8 +37,8 @@ class DetailViewController: UIViewController {
     
     let shaderSettings = [
         ShaderSettingColor(title: "Main color", mainColor: .black),
-        ShaderSettingVariable(title: "Main function", variableValue: 0.4),
-        ShaderSettingVariable(title: "Second function", variableValue: 0.7),
+        ShaderSettingVariable(title: "Scale", variableValue: 0.4),
+        ShaderSettingVariable(title: "Intensity", variableValue: 0.7),
         ] as [ShaderSetting]
     
     
@@ -43,10 +48,13 @@ class DetailViewController: UIViewController {
     var commandQueue: MTLCommandQueue!
     var device: MTLDevice!
     var time:Float = 0
-    var timespeed:Float = Float.pi / 180.00
+    var timespeed:Float = Float.pi / 680.00
     
     @IBOutlet weak var animationView: MTKView!
     var shaderID: String!
+    var mainShaderColor: simd_float3!
+    var shaderScale: Float = 1.0
+    var shaderIntensity: Float = 1.0
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,11 +66,17 @@ class DetailViewController: UIViewController {
         
         return [mainMenuView]
     }
+    
+
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if segue.identifier == "menuEmbedSegue" {
             if let tableViewController = segue.destination as? MenuTableViewController {
                 menuTableViewController = tableViewController
+                menuTableViewController?.tableView.delegate = self
+                menuTableViewController?.tableView.dataSource = self
+                menuTableViewController?.tableView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 80)
+                menuTableViewController?.tableView.separatorInset = UIEdgeInsets.zero
             }
         }
     }
@@ -123,8 +137,10 @@ class DetailViewController: UIViewController {
         computeEncoder?.setComputePipelineState(self.computeState!)
         
         computeEncoder?.setTexture(drawable.texture , index: 0)
-        computeEncoder?.setBytes(&self.time, length: MemoryLayout<Float>.size, index: 0)
-        
+        computeEncoder?.setBytes(&self.shaderScale, length: MemoryLayout<Float>.size, index: 0)
+        computeEncoder?.setBytes(&self.time, length: MemoryLayout<Float>.size, index: 1)
+        computeEncoder?.setBytes(&self.mainShaderColor, length: MemoryLayout<simd_float3>.size, index: 2)
+        computeEncoder?.setBytes(&self.shaderIntensity, length: MemoryLayout<Float>.size, index: 3)
         
         let threadGroupCount = MTLSizeMake(8, 8, 1)
         let threadGroups = MTLSizeMake(drawable.texture.width / threadGroupCount.width, drawable.texture.height / threadGroupCount.height, 1)
@@ -229,9 +245,146 @@ class DetailViewController: UIViewController {
             showMainMenu()
         }
     }
+    
+    
+//    @objc func changedScale(_ slider: TvOSSlider) {
+//        let scale = slider
+//        print(scale)
+//        shaderScale = Float(scale)
+//    }
+//
+    @objc func changedScale(slider: TvOSSlider) {
+        print(slider.value)
+        shaderScale = slider.value
+    }
+    
+    @objc func changedIntensity(slider: TvOSSlider) {
+        shaderIntensity = slider.value
+    }
+    
+    
+    @objc func changedColor(_ slider: ColorSlider) {
+        let color = slider.color
+        mainShaderColor = simd_float3(Float(color.redValue), Float(color.greenValue), Float(color.blueValue))
+        print(color)
+    }
+    
+    @objc func modalDidConfirm(gesture _: UIGestureRecognizer) {
+        
+        self.presentedViewController?.dismiss(animated: true, completion: nil)
 
+    }
+    
+    fileprivate func showColorPicker() {
+        let alert = UIAlertController(
+            title: "Change main color",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
     
 
+        
+        let colorSlider = ColorSlider(orientation: .horizontal, previewSide: .top)
+        alert.view.addSubview(colorSlider)
+        colorSlider.easy.layout(Edges(10))
+        colorSlider.addTarget(self, action: #selector(changedColor), for: .valueChanged)
+        colorSlider.color = UIColor(red: CGFloat(mainShaderColor![0]), green: CGFloat(mainShaderColor![1]), blue: CGFloat(mainShaderColor![2]), alpha: 1.0)
+        
+        
+        let pressedSelectButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(modalDidConfirm))
+        pressedSelectButtonRecognizer.allowedPressTypes = [NSNumber(value: UIPress.PressType.select.rawValue)]
+        colorSlider.addGestureRecognizer(pressedSelectButtonRecognizer)
+        
+        
+        let modalpressedMenuButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(modalDidConfirm))
+        modalpressedMenuButtonRecognizer.allowedPressTypes = [NSNumber(value: UIPress.PressType.menu.rawValue)]
+        colorSlider.addGestureRecognizer(modalpressedMenuButtonRecognizer)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
+    fileprivate func showScaleSlider() {
+        let alert = UIAlertController(
+            title: "",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+    
+
+        
+        let scaleSlider = TvOSSlider()
+        alert.view.addSubview(scaleSlider)
+        scaleSlider.easy.layout(Edges(10))
+        print(shaderScale)
+        scaleSlider.setValue(shaderScale, animated: true)
+        scaleSlider.addTarget(self, action: #selector(changedScale), for: .valueChanged)
+        scaleSlider.minimumValue = 0.0
+        scaleSlider.maximumValue = 10.0
+        scaleSlider.isContinuous = false
+        scaleSlider.minimumTrackTintColor = .orange
+
+
+        
+        let pressedSelectButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(modalDidConfirm))
+        pressedSelectButtonRecognizer.allowedPressTypes = [NSNumber(value: UIPress.PressType.select.rawValue)]
+        scaleSlider.addGestureRecognizer(pressedSelectButtonRecognizer)
+        
+        
+        let modalpressedMenuButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(modalDidConfirm))
+        modalpressedMenuButtonRecognizer.allowedPressTypes = [NSNumber(value: UIPress.PressType.menu.rawValue)]
+        scaleSlider.addGestureRecognizer(modalpressedMenuButtonRecognizer)
+        
+        present(alert, animated: true, completion: nil)
+    }
+
+    fileprivate func showIntensitySlider() {
+        let alert = UIAlertController(
+            title: "",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+    
+
+        
+        let scaleSlider = TvOSSlider()
+        alert.view.addSubview(scaleSlider)
+        scaleSlider.easy.layout(Edges(10))
+        scaleSlider.setValue(shaderIntensity, animated: true)
+        scaleSlider.addTarget(self, action: #selector(changedIntensity), for: .valueChanged)
+        scaleSlider.minimumValue = 0.0
+        scaleSlider.maximumValue = 50.0
+        scaleSlider.isContinuous = false
+        scaleSlider.minimumTrackTintColor = .orange
+        
+
+
+
+        
+        
+        let pressedSelectButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(modalDidConfirm))
+        pressedSelectButtonRecognizer.allowedPressTypes = [NSNumber(value: UIPress.PressType.select.rawValue)]
+        scaleSlider.addGestureRecognizer(pressedSelectButtonRecognizer)
+        
+        
+        let modalpressedMenuButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(modalDidConfirm))
+        modalpressedMenuButtonRecognizer.allowedPressTypes = [NSNumber(value: UIPress.PressType.menu.rawValue)]
+        scaleSlider.addGestureRecognizer(modalpressedMenuButtonRecognizer)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+
+}
+
+extension DetailViewController: RangeSeekSliderDelegate {
+ 
+    func rangeSeekSlider(_ slider: RangeSeekSlider, didChange minValue: CGFloat, maxValue: CGFloat) {
+        print(maxValue)
+        print(minValue)
+    }
 }
 
 extension DetailViewController: MTKViewDelegate {
@@ -250,14 +403,48 @@ extension DetailViewController: MTKViewDelegate {
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+         if ((context.previouslyFocusedIndexPath) != nil) {
+            let cell = tableView.cellForRow(at: context.previouslyFocusedIndexPath!)  as! SimpleTableViewCell
+            cell.textLabel?.textColor = UIColor.white
+         }
+         if ((context.nextFocusedIndexPath) != nil) { // focused state
+            let cell = tableView.cellForRow(at: context.nextFocusedIndexPath!) as! SimpleTableViewCell
+//            let image = UIImage(named: "colorpickerIcon")!.withRenderingMode(.alwaysTemplate)
+//            cell.iconImageView!.image = image
+//            cell.iconImageView!.tintColor = UIColor.black
+            cell.textLabel?.textColor = UIColor.black
+            
+         }
+     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "presetCell", for: indexPath) as? ColorPresetTableViewCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "SimpleTableViewCell", for: indexPath) as? SimpleTableViewCell
             {
             
                 
             let preset = shaderSettings[indexPath.row]
-            cell.titleLabel.text = preset.title
+                cell.cellTitle = preset.title
+                cell.layoutMargins = UIEdgeInsets.zero
+                
+                
+                if (indexPath.row == 0) {
+                    cell.imageView?.image = UIImage(named: "colorpickerIcon")
+                    
+                }
+                
+                if (indexPath.row == 1) {
+                    cell.imageView?.image = UIImage(named: "scaleIcon")
+                    
+                }
+                
+                if (indexPath.row == 2) {
+                    cell.imageView?.image = UIImage(named: "intensityIcon")
+                    
+                }
+                
+                
             return cell
         }
 
@@ -265,17 +452,17 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200.0
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 200.0
+//    }
     
     func numberOfSections(in _: UITableView) -> Int {
-        return 2
+        return 1
     }
 
-    func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
-         return "Presets"
-    }
+//    func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
+//         return "Presets"
+//    }
 
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shaderSettings.count
@@ -285,6 +472,16 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        if (indexPath.row == 0) {
+            showColorPicker()
+        }
         
+        if (indexPath.row == 1) {
+            showScaleSlider()
+        }
+        
+        if (indexPath.row == 2) {
+            showIntensitySlider()
+        }
     }
 }

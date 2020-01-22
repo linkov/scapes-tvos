@@ -40,7 +40,7 @@ class ShaderCell: UICollectionViewCell {
         func configure(_ shader: Shader) {
             imageView.kf.indicatorType = .activity
             imageView.kf.setImage(with: URL(string: shader.imageURL) )
-            
+            titleLabel.font = UIFont(name: "Exo-SemiBold", size: 38);
             titleLabel.text = shader.title
             
 
