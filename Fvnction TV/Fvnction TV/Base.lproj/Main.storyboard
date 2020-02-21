@@ -59,8 +59,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gGe-SS-PVl"/>
                                 </connections>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logocolor" id="Zzy-aw-wyL">
-                                <rect key="frame" x="40" y="40" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="issue1logo" id="Zzy-aw-wyL">
+                                <rect key="frame" x="40" y="40" width="800" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -202,6 +202,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="issue1logo" width="377" height="109.5"/>
         <image name="logocolor" width="222" height="181"/>
     </resources>
 </document>

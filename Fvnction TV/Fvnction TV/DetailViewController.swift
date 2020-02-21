@@ -10,6 +10,8 @@ import UIKit
 import MetalKit
 import EasyPeasy
 
+
+
 enum UIState {
     case colorPresets
     case mainMenu
@@ -122,6 +124,16 @@ class DetailViewController: UIViewController {
         let defaultLibrary = device.makeDefaultLibrary()
         let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
         pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+        
+        pipelineStateDescriptor.colorAttachments[0].isBlendingEnabled = true
+        pipelineStateDescriptor.colorAttachments[0].rgbBlendOperation = .add
+        pipelineStateDescriptor.colorAttachments[0].alphaBlendOperation = .add
+        pipelineStateDescriptor.colorAttachments[0].sourceRGBBlendFactor = .one
+        pipelineStateDescriptor.colorAttachments[0].sourceAlphaBlendFactor = .sourceAlpha
+        pipelineStateDescriptor.colorAttachments[0].destinationRGBBlendFactor = .oneMinusSourceAlpha
+        pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = .oneMinusSourceAlpha
+        
+        
         let computeProgram = defaultLibrary!.makeFunction(name: shader)
         self.computeState = try! device.makeComputePipelineState(function: computeProgram!)
         commandQueue = device.makeCommandQueue()
@@ -136,7 +148,20 @@ class DetailViewController: UIViewController {
         
         computeEncoder?.setComputePipelineState(self.computeState!)
         
-        computeEncoder?.setTexture(drawable.texture , index: 0)
+        
+        if (shaderID == "january06") {
+            let texture =  MetalTexture.imageToTexture(imageNamed: "texture1.png", device: self.device)
+            computeEncoder?.setTexture(texture , index: 1)
+            
+        } else {
+            
+            let texture =  MetalTexture.imageToTexture(imageNamed: "marble3.png", device: self.device)
+            computeEncoder?.setTexture(texture , index: 1)
+        }
+        
+        
+               computeEncoder?.setTexture(drawable.texture , index: 0)
+
         computeEncoder?.setBytes(&self.shaderScale, length: MemoryLayout<Float>.size, index: 0)
         computeEncoder?.setBytes(&self.time, length: MemoryLayout<Float>.size, index: 1)
         computeEncoder?.setBytes(&self.mainShaderColor, length: MemoryLayout<simd_float3>.size, index: 2)
@@ -272,6 +297,8 @@ class DetailViewController: UIViewController {
     @objc func modalDidConfirm(gesture _: UIGestureRecognizer) {
         
         self.presentedViewController?.dismiss(animated: true, completion: nil)
+        
+         hideAllMenus()
 
     }
     
@@ -323,7 +350,7 @@ class DetailViewController: UIViewController {
         scaleSlider.minimumValue = 0.0
         scaleSlider.maximumValue = 10.0
         scaleSlider.isContinuous = false
-        scaleSlider.minimumTrackTintColor = .orange
+        scaleSlider.minimumTrackTintColor = .black
 
 
         
@@ -346,7 +373,7 @@ class DetailViewController: UIViewController {
             preferredStyle: .actionSheet
         )
     
-
+        
         
         let scaleSlider = TvOSSlider()
         alert.view.addSubview(scaleSlider)
@@ -356,7 +383,7 @@ class DetailViewController: UIViewController {
         scaleSlider.minimumValue = 0.0
         scaleSlider.maximumValue = 50.0
         scaleSlider.isContinuous = false
-        scaleSlider.minimumTrackTintColor = .orange
+        scaleSlider.minimumTrackTintColor = .black
         
 
 

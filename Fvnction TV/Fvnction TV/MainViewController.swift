@@ -30,10 +30,10 @@ class MainViewController: UIViewController {
     private var metalView : MTKView!
     var computeState: MTLComputePipelineState?
     
-    
+    var currentShaderName: String?
     var mainShaderColor: simd_float3!
-    var time:Float = 0
-    var timespeed:Float = Float.pi / 180.00
+    var time:Float = 0.0
+    var timespeed:Float = Float.pi / 680.00
     var shaderScale: Float = 1.0
     var shaderIntensity: Float = 1.0
     var pipelineState: MTLRenderPipelineState!
@@ -66,13 +66,14 @@ class MainViewController: UIViewController {
         logoImageView.easy.layout(
             CenterX(0.0),
             Top(40.0),
-            Width(100.0),
+            Width(700.0),
             Height(100.0)
         )
         
     }
     
     func configureCenteredLayout() {
+        
         let centeredCollectionViewFlowLayout = CenteredCollectionViewFlowLayout()
         centeredCollectionViewFlowLayout.itemSize = CGSize(
             width: view.bounds.width * cellPercentWidth,
@@ -97,7 +98,7 @@ class MainViewController: UIViewController {
     
     fileprivate func setupMetal(shader: String) {
         //view
-        
+        self.currentShaderName = shader;
         animationView.layer.opacity = 0.4
         animationView.delegate = self
         animationView.framebufferOnly = false
@@ -106,6 +107,16 @@ class MainViewController: UIViewController {
         let defaultLibrary = device.makeDefaultLibrary()
         let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
         pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+        
+//
+//        pipelineStateDescriptor.colorAttachments[0].isBlendingEnabled = true
+//        pipelineStateDescriptor.colorAttachments[0].rgbBlendOperation = .add
+//        pipelineStateDescriptor.colorAttachments[0].alphaBlendOperation = .add
+//        pipelineStateDescriptor.colorAttachments[0].sourceRGBBlendFactor = .one
+//        pipelineStateDescriptor.colorAttachments[0].sourceAlphaBlendFactor = .sourceAlpha
+//        pipelineStateDescriptor.colorAttachments[0].destinationRGBBlendFactor = .oneMinusSourceAlpha
+//        pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = .oneMinusSourceAlpha
+        
         let computeProgram = defaultLibrary!.makeFunction(name: shader)
         self.computeState = try! device.makeComputePipelineState(function: computeProgram!)
         commandQueue = device.makeCommandQueue()
@@ -124,7 +135,13 @@ class MainViewController: UIViewController {
         
         computeEncoder?.setComputePipelineState(self.computeState!)
         
+
+        let texture =  MetalTexture.imageToTexture(imageNamed: "marble3.png", device: self.device)
+        computeEncoder?.setTexture(texture , index: 1)
+
+        
         computeEncoder?.setTexture(drawable.texture , index: 0)
+
         computeEncoder?.setBytes(&self.shaderScale, length: MemoryLayout<Float>.size, index: 0)
         computeEncoder?.setBytes(&self.time, length: MemoryLayout<Float>.size, index: 1)
         computeEncoder?.setBytes(&self.mainShaderColor, length: MemoryLayout<simd_float3>.size, index: 2)

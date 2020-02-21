@@ -19,6 +19,9 @@
 		F195B0A023D6FBF0002A16FE /* HSBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09923D6FBF0002A16FE /* HSBColor.swift */; };
 		F195B0A123D6FBF0002A16FE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09A23D6FBF0002A16FE /* GradientView.swift */; };
 		F195B0A223D6FBF0002A16FE /* DefaultPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195B09B23D6FBF0002A16FE /* DefaultPreviewView.swift */; };
+		F1A99F1823FF2FCA00416F24 /* Happyplanet.metal in Sources */ = {isa = PBXBuildFile; fileRef = F1A99F1723FF2FCA00416F24 /* Happyplanet.metal */; };
+		F1A99F1A23FF387000416F24 /* MetalTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A99F1923FF387000416F24 /* MetalTexture.swift */; };
+		F1A99F1C23FF47BE00416F24 /* VectorMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A99F1B23FF47BE00416F24 /* VectorMath.swift */; };
 		F1C2CD4A23D773070078D698 /* robotoMono-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C2CD4623D773060078D698 /* robotoMono-medium.ttf */; };
 		F1C2CD4B23D773070078D698 /* robotoMono-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C2CD4723D773060078D698 /* robotoMono-bold.ttf */; };
 		F1C2CD4C23D773070078D698 /* exo-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C2CD4823D773060078D698 /* exo-semibold.ttf */; };
@@ -87,6 +90,9 @@
 		F195B09923D6FBF0002A16FE /* HSBColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColor.swift; sourceTree = "<group>"; };
 		F195B09A23D6FBF0002A16FE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F195B09B23D6FBF0002A16FE /* DefaultPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPreviewView.swift; sourceTree = "<group>"; };
+		F1A99F1723FF2FCA00416F24 /* Happyplanet.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Happyplanet.metal; sourceTree = "<group>"; };
+		F1A99F1923FF387000416F24 /* MetalTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalTexture.swift; sourceTree = "<group>"; };
+		F1A99F1B23FF47BE00416F24 /* VectorMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorMath.swift; sourceTree = "<group>"; };
 		F1C2CD4623D773060078D698 /* robotoMono-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "robotoMono-medium.ttf"; sourceTree = "<group>"; };
 		F1C2CD4723D773060078D698 /* robotoMono-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "robotoMono-bold.ttf"; sourceTree = "<group>"; };
 		F1C2CD4823D773060078D698 /* exo-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "exo-semibold.ttf"; sourceTree = "<group>"; };
@@ -383,7 +389,10 @@
 			isa = PBXGroup;
 			children = (
 				F1E13D2323D6902500A492EA /* Shaders.metal */,
+				F1A99F1B23FF47BE00416F24 /* VectorMath.swift */,
+				F1A99F1723FF2FCA00416F24 /* Happyplanet.metal */,
 				F1E13D0D23D6311A00A492EA /* AppDelegate.swift */,
+				F1A99F1923FF387000416F24 /* MetalTexture.swift */,
 				F1E13D2823D69BE300A492EA /* Models.swift */,
 				F1E13D2F23D6A8D200A492EA /* ShaderStore.swift */,
 				F1E13D2A23D69CAB00A492EA /* Cells */,
@@ -532,7 +541,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1C2CD9223D7A8240078D698 /* M13CheckboxController.swift in Sources */,
+				F1A99F1A23FF387000416F24 /* MetalTexture.swift in Sources */,
 				F1C2CD8A23D7A8240078D698 /* M13CheckboxCheckPathGenerator.swift in Sources */,
+				F1A99F1C23FF47BE00416F24 /* VectorMath.swift in Sources */,
 				F1E13D0E23D6311A00A492EA /* AppDelegate.swift in Sources */,
 				F1C2CD8523D7A8240078D698 /* M13CheckboxFillController.swift in Sources */,
 				F1C2CD8423D7A8240078D698 /* M13CheckboxFlatController.swift in Sources */,
@@ -569,6 +580,7 @@
 				F1C2CD8923D7A8240078D698 /* M13CheckboxPathGenerator.swift in Sources */,
 				F195B09F23D6FBF0002A16FE /* ColorSliderExtensions.swift in Sources */,
 				F1C2CD9A23D7DC6D0078D698 /* RangeSeekSliderDelegate.swift in Sources */,
+				F1A99F1823FF2FCA00416F24 /* Happyplanet.metal in Sources */,
 				F1C2CD8C23D7A8240078D698 /* M13CheckboxAddRemovePathGenerator.swift in Sources */,
 				F195B09D23D6FBF0002A16FE /* ColorSlider.swift in Sources */,
 				F195B09E23D6FBF0002A16FE /* Gradient.swift in Sources */,
