@@ -65,7 +65,7 @@ kernel void january01(
                              texture2d<float,access::write> texture [[texture(0)]],
                       texture2d<float,access::sample> textureInput [[texture(1)]],
                              uint2 currentPixelPos [[thread_position_in_grid]],
-                             device const float &shaderScale [[buffer(0)]], device const float &time [[buffer(1)]], device const float3 &color_in [[buffer(2)]], device const float &shaderIntensity [[buffer(3)]]
+                             device const float &shaderScale [[buffer(0)]], device const float &time [[buffer(1)]], device const float3 &color_in [[buffer(2)]], device const float &shaderIntensity [[buffer(3)]], device const float4 &gamepad_in [[buffer(4)]]
                              ) {
         
     float3 white = color_in;
@@ -112,7 +112,7 @@ kernel void january02(
                              texture2d<float,access::write> texture [[texture(0)]],
                       texture2d<float,access::sample> textureInput [[texture(1)]],
                              uint2 currentPixelPos [[thread_position_in_grid]],
-                             device const float &shaderScale [[buffer(0)]], device const float &time [[buffer(1)]], device const float3 &color_in [[buffer(2)]], device const float &shaderIntensity [[buffer(3)]]
+                             device const float &shaderScale [[buffer(0)]], device const float &time [[buffer(1)]], device const float3 &color_in [[buffer(2)]], device const float &shaderIntensity [[buffer(3)]], device const float4 &gamepad_in [[buffer(4)]]
                              ) {
         
     
@@ -160,7 +160,8 @@ kernel void january06(
                              device const float &shaderScale [[buffer(0)]],
                              device const float &time [[buffer(1)]],
                              device const float3 &color_in [[buffer(2)]],
-                             device const float &shaderIntensity [[buffer(3)]]
+                             device const float &shaderIntensity [[buffer(3)]],
+                            device const float4 &gamepad_in [[buffer(4)]]
                              ) {
         
 
@@ -241,7 +242,8 @@ kernel void january07(
                              device const float &shaderScale [[buffer(0)]],
                              device const float &time [[buffer(1)]],
                              device const float3 &color_in [[buffer(2)]],
-                             device const float &shaderIntensity [[buffer(3)]]
+                             device const float &shaderIntensity [[buffer(3)]],
+                             device const float4 &gamepad_in [[buffer(4)]]
                              ) {
         
 
@@ -277,11 +279,11 @@ kernel void january07(
     }
     
 }
-float circle(float2 _st, float _radius, float shaderIntensity){
-    float2 dist = _st - float2(0.5 + shaderIntensity * 0.02);
+float circle(float2 _st, float _radius, float shaderIntensity, float shaderScale){
+    float2 dist = _st - float2(0.5 + (1. - shaderIntensity) * 0.02);
     return 1.-smoothstep(_radius-(_radius*0.01),
                          _radius+(_radius*0.01),
-                         dot(dist,dist)*4.0);
+                         dot(dist,dist)*(3.0+shaderScale));
 }
 
 
@@ -292,12 +294,20 @@ kernel void january08(
                              device const float &shaderScale [[buffer(0)]],
                              device const float &time [[buffer(1)]],
                              device const float3 &color_in [[buffer(2)]],
-                             device const float &shaderIntensity [[buffer(3)]]
+                             device const float &shaderIntensity [[buffer(3)]], device const float4 &gamepad_in [[buffer(4)]]
                              ) {
         
+    
+    float SI = shaderScale;
+    float SS = shaderIntensity;
 
     
-     float4 influenced_color = float4(color_in, 0.2);
+    float4 influenced_color = float4(0.9,0.,0.,0.);
+    if ((color_in.x + color_in.y + color_in.z)  != 0.0) {
+             influenced_color = float4(color_in, 0.2);
+         }
+
+    
 
         float t = time * 4.;
 
@@ -309,7 +319,7 @@ kernel void january08(
         float2 uv = float2(width - currentPixelPos.x,height - currentPixelPos.y) / res;
 
     
-        float2 st = ( float2( float(currentPixelPos.x),  float(currentPixelPos.y))  / 2.1  - 0.1 * res.xy) / res.y+0.35 / shaderScale;
+        float2 st = ( float2( float(currentPixelPos.x),  float(currentPixelPos.y))  / (1.1 + SI) - 0.1 * res.xy) / res.y+0.35;
        
     
         float pct = 1.3-st.y*1.2;
@@ -317,7 +327,7 @@ kernel void january08(
        for(int i=0; i<40 + shaderIntensity;i++){
            //change i to float so I can multiply by it
            float i_float = float(i);
-           pct += circle(st+(0.6*sin(t/3.-i_float*st.yx)),0.01, shaderIntensity)*st.y*0.8;
+           pct += circle(st+(0.6*sin(t/3.-i_float*st.yx)),0.01, SI, SS)*st.y*0.8;
            
        }
     
@@ -327,7 +337,7 @@ kernel void january08(
        // Output to screen, adjust colour
 
     
-       influenced_color = influenced_color +  float4(pct+.1,pct+.1,pct,1.0)*float4(0.9,0.,0.,0.)+float4(0.,0.0,0.3,0.);
+       influenced_color = float4(pct+.1,pct+.1,pct,1.0)*influenced_color+float4(0.,0.0,0.3,0.);
         texture.write(influenced_color, currentPixelPos);
     
 }
@@ -439,7 +449,7 @@ float2 hash( float2 p )
     return -1.0 + 1.0*fract(sin(p)*43758.5453123);
 }
 
-float noise(float2 p )
+float noise66(float2 p )
 {
     const float K1 = 0.366025404;
     const float K2 = 0.211324865;
@@ -464,10 +474,10 @@ float fbm4(float2 p )
 {
     const float2x2 m = float2x2( 0.80,  0.60, -0.60,  0.80 );
     float f = 0.0;
-    f += 0.5000*noise( p ); p = m*p*2.02;
-    f += 0.2500*noise( p ); p = m*p*2.03;
-    f += 0.1250*noise( p ); p = m*p*2.01;
-    f += 0.0625*noise( p );
+    f += 0.5000*noise66( p ); p = m*p*2.02;
+    f += 0.2500*noise66( p ); p = m*p*2.03;
+    f += 0.1250*noise66( p ); p = m*p*2.01;
+    f += 0.0625*noise66( p );
     return f;
 }
 
@@ -475,12 +485,12 @@ float fbm6(float2 p )
 {
     const float2x2 m = float2x2( 0.80,  0.60, -0.60,  0.80 );
     float f = 0.0;
-    f += 0.5000*noise( p ); p = m*p*2.02;
-    f += 0.2500*noise( p ); p = m*p*2.03;
-    f += 0.1250*noise( p ); p = m*p*2.01;
-    f += 0.0625*noise( p ); p = m*p*2.04;
-    f += 0.031250*noise( p ); p = m*p*2.01;
-    f += 0.015625*noise( p );
+    f += 0.5000*noise66( p ); p = m*p*2.02;
+    f += 0.2500*noise66( p ); p = m*p*2.03;
+    f += 0.1250*noise66( p ); p = m*p*2.01;
+    f += 0.0625*noise66( p ); p = m*p*2.04;
+    f += 0.031250*noise66( p ); p = m*p*2.01;
+    f += 0.015625*noise66( p );
     return f;
 }
 
@@ -526,7 +536,8 @@ kernel void january09(
                              device const float &shaderScale [[buffer(0)]],
                              device const float &time [[buffer(1)]],
                              device const float3 &color_in [[buffer(2)]],
-                             device const float &shaderIntensity [[buffer(3)]]
+                             device const float &shaderIntensity [[buffer(3)]],
+                            device const float4 &gamepad_in [[buffer(4)]]
                              ) {
 
 
@@ -671,7 +682,7 @@ kernel void january10(
                              device const float &shaderScale [[buffer(0)]],
                              device const float &time [[buffer(1)]],
                              device const float3 &color_in [[buffer(2)]],
-                             device const float &shaderIntensity [[buffer(3)]]
+                             device const float &shaderIntensity [[buffer(3)]], device const float4 &gamepad_in [[buffer(4)]]
                              ) {
         
 
@@ -707,10 +718,11 @@ kernel void january10(
         float3 ray = normalize(float3(uv, 1.2));
     
         
-        ray.xz = rot2D(ray.xz, t * 0.15 );
-        ray.yz = rot2D(ray.yz, t * 0.1 );
+//        ray.xz = rot2D(ray.xz, t * 0.15 );
+//        ray.yz = rot2D(ray.yz, t * 0.1 );
         
-    
+        ray.xz = rot2D(ray.xz, gamepad_in.z > 0.0 ? gamepad_in.x/10.0 : time * 0.15 );
+        ray.yz = rot2D(ray.yz, gamepad_in.z > 0.0 ? gamepad_in.y/10.0 : time * 0.1 );
     
         float3 uvDist = intersectInfiniteGrid(orig, ray);
         uvDist.xy *= 2.0 + (1. - shaderIntensity);
@@ -725,8 +737,11 @@ kernel void january10(
         float3 orig = float3(0.65 + 0.03, 0.75, 0.1 + t);
         float3 ray = normalize(float3(uv, 1.2));
     
-        ray.xz = rot2D(ray.xz, t * 0.15 );
-        ray.yz = rot2D(ray.yz, t * 0.1 );
+//        ray.xz = rot2D(ray.xz, t * 0.15 );
+//        ray.yz = rot2D(ray.yz, t * 0.1 );
+        
+        ray.xz = rot2D(ray.xz, gamepad_in.z > 0.0 ? gamepad_in.x/10.0 : time * 0.15 );
+        ray.yz = rot2D(ray.yz, gamepad_in.z > 0.0 ? gamepad_in.y/10.0 : time * 0.1 );
         
         float3 uvDist = intersectInfiniteGrid(orig, ray);
         uvDist.xy *= 2.0;
@@ -736,6 +751,7 @@ kernel void january10(
         rightEye = dot(texC, float3(0.3, 0.59, 0.11));
     }
     
+//    float4 fragColor = float4(leftEye, leftEye, leftEye, 1.0);
     float4 fragColor = float4(leftEye, rightEye, rightEye, 1.0);
     texture.write(fragColor, currentPixelPos);
 }

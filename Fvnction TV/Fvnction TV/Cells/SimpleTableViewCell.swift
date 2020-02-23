@@ -8,12 +8,10 @@
 
 import UIKit
 import EasyPeasy
-import BadgeSwift
 
 class SimpleTableViewCell: UITableViewCell {
 
     var iconImageView: UIImageView?
-    var badge: BadgeSwift?
     var cellTitle : String? {
         didSet {
             self.textLabel?.text  = cellTitle

@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BadgeSwift" "${PODS_CONFIGURATION_BUILD_DIR}/CenteredCollectionView" "${PODS_CONFIGURATION_BUILD_DIR}/EasyPeasy" "${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher" "${PODS_CONFIGURATION_BUILD_DIR}/XCDYouTubeKit"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CenteredCollectionView" "${PODS_CONFIGURATION_BUILD_DIR}/EasyPeasy" "${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher" "${PODS_CONFIGURATION_BUILD_DIR}/XCDYouTubeKit" "${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/tvOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/BadgeSwift/BadgeSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CenteredCollectionView/CenteredCollectionView.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/EasyPeasy/EasyPeasy.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CenteredCollectionView/CenteredCollectionView.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/EasyPeasy/EasyPeasy.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "Accelerate" -framework "BadgeSwift" -framework "CFNetwork" -framework "CenteredCollectionView" -framework "EasyPeasy" -framework "JavaScriptCore" -framework "Kingfisher" -framework "UIKit" -framework "XCDYouTubeKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"sqlite3" -l"z" -framework "Accelerate" -framework "AppCenter" -framework "AppCenterAnalytics" -framework "AppCenterCrashes" -framework "CFNetwork" -framework "CenteredCollectionView" -framework "EasyPeasy" -framework "Foundation" -framework "JavaScriptCore" -framework "Kingfisher" -framework "SystemConfiguration" -framework "UIKit" -framework "XCDYouTubeKit"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

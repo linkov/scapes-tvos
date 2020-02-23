@@ -161,14 +161,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/BadgeSwift/BadgeSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CenteredCollectionView/CenteredCollectionView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/BadgeSwift/BadgeSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CenteredCollectionView/CenteredCollectionView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"

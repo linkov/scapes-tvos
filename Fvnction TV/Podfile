@@ -1,7 +1,10 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+
 target 'Fvnction TV' do
+  
+  project 'Fvnction TV.xcodeproj'
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
@@ -9,4 +12,6 @@ target 'Fvnction TV' do
   pod 'XCDYouTubeKit'
   pod "CenteredCollectionView"
   pod "EasyPeasy"
+  pod 'AppCenter'
+  
 end

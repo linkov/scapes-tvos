@@ -32,6 +32,8 @@ class MetalTexture {
         context?.draw(image.cgImage!, in: bounds)
 
         let texDescriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .rgba8Unorm, width: width, height: height, mipmapped: false)
+        texDescriptor.pixelFormat = .bgra8Unorm
+        
 
         let texture = device.makeTexture(descriptor: texDescriptor)
         texture!.label = imageNamed
@@ -44,3 +46,14 @@ class MetalTexture {
         return texture!
     }
 }
+
+//
+//pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+//
+//pipelineStateDescriptor.colorAttachments[0].isBlendingEnabled = true
+//pipelineStateDescriptor.colorAttachments[0].rgbBlendOperation = .add
+//pipelineStateDescriptor.colorAttachments[0].alphaBlendOperation = .add
+//pipelineStateDescriptor.colorAttachments[0].sourceRGBBlendFactor = .one
+//pipelineStateDescriptor.colorAttachments[0].sourceAlphaBlendFactor = .sourceAlpha
+//pipelineStateDescriptor.colorAttachments[0].destinationRGBBlendFactor = .oneMinusSourceAlpha
+//pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = .oneMinusSourceAlpha

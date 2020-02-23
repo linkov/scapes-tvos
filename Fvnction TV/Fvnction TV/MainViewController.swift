@@ -12,7 +12,7 @@ import CenteredCollectionView
 import EasyPeasy
 
 class MainViewController: UIViewController {
-    
+    var gamepadPosition: simd_float4!
     
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var animationView: MTKView!
@@ -100,7 +100,11 @@ class MainViewController: UIViewController {
         //view
         self.currentShaderName = shader;
         animationView.layer.opacity = 0.4
-        animationView.delegate = self
+        
+        if (animationView != nil && animationView.isKind(of: MTKView.self)) {
+            animationView.delegate = self
+        }
+        
         animationView.framebufferOnly = false
         device = MTLCreateSystemDefaultDevice()
         animationView.device = device
@@ -146,6 +150,7 @@ class MainViewController: UIViewController {
         computeEncoder?.setBytes(&self.time, length: MemoryLayout<Float>.size, index: 1)
         computeEncoder?.setBytes(&self.mainShaderColor, length: MemoryLayout<simd_float3>.size, index: 2)
         computeEncoder?.setBytes(&self.shaderIntensity, length: MemoryLayout<Float>.size, index: 3)
+        computeEncoder?.setBytes(&self.gamepadPosition, length: MemoryLayout<simd_float4>.size, index: 4)
         
         let threadGroupCount = MTLSizeMake(8, 8, 1)
         let threadGroups = MTLSizeMake(drawable.texture.width / threadGroupCount.width, drawable.texture.height / threadGroupCount.height, 1)
@@ -206,7 +211,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         if let indexPath = context.nextFocusedIndexPath {
             
             let shader = shaders[indexPath.item]
-            animationView.releaseDrawables()
             mainShaderColor = shader.mainColor
             time = 0.0
             setupMetal(shader: shader.id)
@@ -220,7 +224,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         detailVC.shaderID = shaders[indexPath.item].id
         detailVC.mainShaderColor = shaders[indexPath.item].mainColor
         
-        animationView.releaseDrawables()
       
         
         present(detailVC, animated: true, completion: nil)

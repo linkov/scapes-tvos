@@ -9,8 +9,15 @@
 import UIKit
 import MetalKit
 import EasyPeasy
+import GameController
+//const device packed_float3* vertex_array [[ buffer(0) ]],
+//unsigned int vid [[ vertex_id ]]
 
-
+//struct Vertex {
+//    var position: float4
+//    var normal: float4
+//    var color: float4
+//}
 
 enum UIState {
     case colorPresets
@@ -18,9 +25,21 @@ enum UIState {
     case allClosed
 }
 
-class DetailViewController: UIViewController {
-
+class DetailViewController: UIViewController, ReactToMotionEvents {
     
+    func motionUpdate(motion: GCMotion) {
+        self.gamepadPosition = simd_float4( Float(motion.attitude.x * 100),Float(motion.attitude.y * 100),Float(motion.attitude.z * 100),Float(0))
+        print(self.gamepadPosition)
+    }
+    
+    
+     var vertexBuffer_vid: MTLBuffer?
+    var vertexBuffer_array: MTLBuffer?
+    
+    var vertex_array: simd_float3!
+    var vid: Int!
+
+    private var renderPipelineState: MTLRenderPipelineState!
     
     var focusedView: UIView?
     
@@ -49,6 +68,10 @@ class DetailViewController: UIViewController {
     var pipelineState: MTLRenderPipelineState!
     var commandQueue: MTLCommandQueue!
     var device: MTLDevice!
+    
+    
+    var gamepadPosition: simd_float4!
+    
     var time:Float = 0
     var timespeed:Float = Float.pi / 680.00
     
@@ -58,10 +81,18 @@ class DetailViewController: UIViewController {
     var shaderScale: Float = 1.0
     var shaderIntensity: Float = 1.0
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.motionDelegate = nil
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         view.isUserInteractionEnabled = true
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.motionDelegate = self
     }
 
     override var preferredFocusEnvironments: [UIFocusEnvironment] {
@@ -82,15 +113,22 @@ class DetailViewController: UIViewController {
             }
         }
     }
+    
+
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-     
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.motionDelegate = self
+//     vertexBuffer_vid = device.makeBuffer(length: MemoryLayout<Int>.size, options: [])!
+        
+        
         setupView()
         setupGestureRecognizers()
         setupMetal(shader: shaderID)
+        vertexBuffer_array = device.makeBuffer(length: MemoryLayout<Float>.size * 4, options: [])!
+
     }
 //    fileprivate func setupView() {
 //        view.translatesAutoresizingMaskIntoConstraints = false
@@ -117,31 +155,44 @@ class DetailViewController: UIViewController {
     fileprivate func setupMetal(shader: String) {
         //view
         
-        animationView.delegate = self
+        if (animationView != nil && animationView.isKind(of: MTKView.self)) {
+            animationView.delegate = self
+        }
+        
         animationView.framebufferOnly = false
         device = MTLCreateSystemDefaultDevice()
         animationView.device = device
         let defaultLibrary = device.makeDefaultLibrary()
-        let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
-        pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+        let pipelineRenderDescriptor = MTLRenderPipelineDescriptor()
+        pipelineRenderDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
         
-        pipelineStateDescriptor.colorAttachments[0].isBlendingEnabled = true
-        pipelineStateDescriptor.colorAttachments[0].rgbBlendOperation = .add
-        pipelineStateDescriptor.colorAttachments[0].alphaBlendOperation = .add
-        pipelineStateDescriptor.colorAttachments[0].sourceRGBBlendFactor = .one
-        pipelineStateDescriptor.colorAttachments[0].sourceAlphaBlendFactor = .sourceAlpha
-        pipelineStateDescriptor.colorAttachments[0].destinationRGBBlendFactor = .oneMinusSourceAlpha
-        pipelineStateDescriptor.colorAttachments[0].destinationAlphaBlendFactor = .oneMinusSourceAlpha
+        pipelineRenderDescriptor.colorAttachments[0].isBlendingEnabled = true
+        pipelineRenderDescriptor.colorAttachments[0].rgbBlendOperation = .add
+        pipelineRenderDescriptor.colorAttachments[0].alphaBlendOperation = .add
+        pipelineRenderDescriptor.colorAttachments[0].sourceRGBBlendFactor = .one
+        pipelineRenderDescriptor.colorAttachments[0].sourceAlphaBlendFactor = .sourceAlpha
+        pipelineRenderDescriptor.colorAttachments[0].destinationRGBBlendFactor = .oneMinusSourceAlpha
+        pipelineRenderDescriptor.colorAttachments[0].destinationAlphaBlendFactor = .oneMinusSourceAlpha
+
+        pipelineRenderDescriptor.vertexFunction = defaultLibrary!.makeFunction(name: "basic_vertex")
+        pipelineRenderDescriptor.fragmentFunction = defaultLibrary!.makeFunction(name: "basic_fragment")
         
+        do {
+            renderPipelineState = try device!.makeRenderPipelineState(descriptor: pipelineRenderDescriptor)
+        } catch {
+            fatalError("Unable to create preview Metal view pipeline state. (\(error))")
+        }
         
         let computeProgram = defaultLibrary!.makeFunction(name: shader)
         self.computeState = try! device.makeComputePipelineState(function: computeProgram!)
         commandQueue = device.makeCommandQueue()
+        
     }
     
     
     func render(_ drawable: CAMetalDrawable?) {
         guard let drawable = drawable else { return }
+
         
         let commandBuffer = commandQueue.makeCommandBuffer()
         let computeEncoder = commandBuffer!.makeComputeCommandEncoder()
@@ -150,28 +201,54 @@ class DetailViewController: UIViewController {
         
         
         if (shaderID == "january06") {
+ 
             let texture =  MetalTexture.imageToTexture(imageNamed: "texture1.png", device: self.device)
             computeEncoder?.setTexture(texture , index: 1)
             
+
+            
         } else {
             
-            let texture =  MetalTexture.imageToTexture(imageNamed: "marble3.png", device: self.device)
+            let texture =  MetalTexture.imageToTexture(imageNamed: "marble3.jpg", device: self.device)
             computeEncoder?.setTexture(texture , index: 1)
         }
         
         
-               computeEncoder?.setTexture(drawable.texture , index: 0)
+        computeEncoder?.setTexture(drawable.texture , index: 0)
 
+
+        
         computeEncoder?.setBytes(&self.shaderScale, length: MemoryLayout<Float>.size, index: 0)
         computeEncoder?.setBytes(&self.time, length: MemoryLayout<Float>.size, index: 1)
         computeEncoder?.setBytes(&self.mainShaderColor, length: MemoryLayout<simd_float3>.size, index: 2)
         computeEncoder?.setBytes(&self.shaderIntensity, length: MemoryLayout<Float>.size, index: 3)
+        computeEncoder?.setBytes(&self.gamepadPosition, length: MemoryLayout<simd_float4>.size, index: 4)
         
         let threadGroupCount = MTLSizeMake(8, 8, 1)
         let threadGroups = MTLSizeMake(drawable.texture.width / threadGroupCount.width, drawable.texture.height / threadGroupCount.height, 1)
         
         computeEncoder!.dispatchThreadgroups(threadGroups, threadsPerThreadgroup: threadGroupCount)
         computeEncoder!.endEncoding()
+        
+//
+//        let renderPassDescriptor = MTLRenderPassDescriptor()
+//           renderPassDescriptor.colorAttachments[0].texture = drawable.texture
+//           renderPassDescriptor.colorAttachments[0].loadAction = .clear
+//           renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.0, green: 104.0/255.0, blue: 5.0/255.0, alpha: 1.0)
+//           renderPassDescriptor.colorAttachments[0].storeAction = .store
+//
+//        let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
+//        renderCommandEncoder!.setRenderPipelineState(self.renderPipelineState)
+//
+//
+//
+//
+//        renderCommandEncoder!.setVertexBuffer(self.vertexBuffer_array, offset: 0, index: 0)
+//
+//
+//        renderCommandEncoder!.drawPrimitives(type: .triangleStrip, vertexStart: 0, vertexCount: 4)
+//        renderCommandEncoder!.endEncoding()
+//
         commandBuffer?.present(drawable)
         
         commandBuffer!.commit()
